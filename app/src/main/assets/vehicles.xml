@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Vehicle Rental System — initial vehicle database.
+
+    fuelType integer mapping (direct bitmask):
+      DIESEL = 1  (bit 0)
+      PETROL = 2  (bit 1)
+      LPG    = 4  (bit 2)
+      CNG    = 8  (bit 3)
+
+    Combinations (bitwise OR):
+      3 = DIESEL | PETROL
+      5 = DIESEL | LPG
+      6 = PETROL | LPG
+      7 = DIESEL | PETROL | LPG
+      9 = DIESEL | CNG
+      ...
+
+    For non-combustion vehicles (bicycle, scooter), omit the <fuelType> tag.
+-->
+<vehicles>
+
+    <car>
+        <name>Honda Civic</name>
+        <fuelType>3</fuelType>
+        <!-- 3 = DIESEL | PETROL -->
+    </car>
+
+    <motorboat>
+        <name>Super motorboat</name>
+        <fuelType>2</fuelType>
+        <!-- 2 = PETROL  (original XML had 0 which is invalid; defaulting to PETROL) -->
+    </motorboat>
+
+    <car>
+        <name>Mercedes CLK</name>
+        <fuelType>5</fuelType>
+        <!-- 5 = DIESEL | LPG -->
+    </car>
+
+    <bicycle>
+        <name>Giant</name>
+    </bicycle>
+
+    <scooter>
+        <name>Cool scooter</name>
+    </scooter>
+
+</vehicles>
